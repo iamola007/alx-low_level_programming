@@ -7,12 +7,12 @@
 
 int is_numerical(unsigned int n)
 {
-	return (n >= 0 && n <= 9);
+	return (n >= '0' && n <= '9');
 }
 
 /**
  * _atoi - convert a string to an int
- * @s: a pointer to a string
+ * @s: string a pointer to a string
  * Return: return the number
 */
 
@@ -28,7 +28,7 @@ int _atoi(char *s)
 	{
 		if (is_numerical(s[i]))
 		{
-			number = (s[i] - 48) * number * 10;
+			number = (s[i] - 48) + number * 10;
 
 			if (s[i + 1] == ' ')
 				break;
